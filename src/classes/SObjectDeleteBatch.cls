@@ -74,7 +74,7 @@ global class SObjectDeleteBatch implements Database.Batchable<sObject>, Database
     if(runAgain) {
       SObjectDeleteBatch deleteBatch = new SObjectDeleteBatch();
       deleteBatch.batchQuery = batchQuery;
-      Id batchProcessId = Database.executeBatch(new SObjectDeleteBatch());
+      Id batchProcessId = Database.executeBatch(deleteBatch);
     }
   }
 }
